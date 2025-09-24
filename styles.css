@@ -1,0 +1,105 @@
+/* Root reset */
+* { box-sizing: border-box; }
+html, body { height: 100%; }
+body {
+  margin: 0;
+  background: #eeeeee; /* color/text-white used as canvas in Figma */
+  font-family: Inter, system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+}
+
+.app[data-node-id="213:86"] {
+  position: relative;
+  width: 100%;
+  height: 100vh;
+}
+
+/* Center the calculator */
+.calculator[data-node-id="213:81"] {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  background: #141414; /* color/bg */
+  padding: 8px; /* spacing/sp-8 */
+  border-radius: 8px;
+  box-shadow: 0 16px 24px 0 rgba(0,0,0,0.2);
+  display: flex;
+  flex-direction: column;
+  gap: 16px; /* spacing/sp-16 */
+  width: 188px; /* from metadata */
+}
+
+.title[data-node-id="213:79"] {
+  color: #eeeeee; /* color/text-white */
+  font-family: Montserrat, Inter, system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+  font-weight: 700;
+  font-size: 14px;
+  height: 24px;
+  display: flex;
+  align-items: center;
+}
+
+.display[data-node-id="213:83"] {
+  color: #eeeeee; /* color/text-white */
+  font-weight: 500;
+  font-size: 24px;
+  height: 24px;
+  line-height: 32px;
+  text-align: right;
+}
+
+.keyboard[data-node-id="213:77"] {
+  display: flex;
+  flex-direction: column;
+  gap: 4px; /* spacing/sp-4 */
+}
+
+.row[data-name="Row"] {
+  display: flex;
+  gap: 4px; /* spacing/sp-4 */
+}
+
+.key {
+  background: #eeeeee; /* color/bt-white */
+  border: 0;
+  padding: 8px; /* spacing/sp-8 */
+  border-radius: 8px;
+  width: 40px;
+  height: 40px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  color: #141414; /* color/text-black */
+  font-weight: 500;
+  font-size: 14px;
+  cursor: pointer;
+  /* Default state has an inset depth like the bt component overlay */
+  box-shadow: inset 0 -2px 4px 1px rgba(0,0,0,0.4);
+  transition: opacity .3s ease-in-out, box-shadow .2s ease, background-color .2s ease;
+}
+
+.key:hover {
+  /* Hover: slightly lighter and slightly shallower inset */
+  /* background: #f4f4f4; */
+  box-shadow: inset 0 2px 4px 1px rgba(0,0,0,0.40);
+  opacity: .95;
+}
+
+.key:focus { outline: none; }
+
+.key:active { transform: translateY(0.5px); }
+
+.key-op {
+  background: #f6670e; /* color/bt-orange */
+  color: #eeeeee;
+}
+
+.key-op:hover {
+  /* background: #ff761f; subtle hover raise for orange */
+  box-shadow: inset 0 2px 4px 1px rgba(0,0,0,0.40);
+  opacity: .96;
+}
+
+.key-wide {
+  width: 84px; /* from metadata for the wide zero */
+}
